@@ -4,13 +4,13 @@ Studili is an android app that aids learning by popping up certain portions of s
 
 ### Technologies
 Android
+
 Java
 
 ### Uses
 For disciplined studying
-achieve a lot by having little pieces of the Big Cake.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+achieve a lot by having little pieces of the Big Cake.
 
 For more details see [Studili WebPage](https://peterperez.github.io/studili/).
 
