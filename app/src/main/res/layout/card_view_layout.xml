@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:id="@+id/card_view"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            >
+
+            <ImageView
+                android:id="@+id/person_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignBottom="@+id/person_icon2"
+                android:layout_alignParentStart="true"
+                android:cropToPadding="false"
+                android:src="@drawable/studililogosmaller"
+                android:contentDescription=""
+                android:layout_alignParentLeft="true" />
+
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/studililogosmaller"
+                android:layout_toRightOf="@+id/person_image"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_alignParentTop="true"
+                android:id="@+id/person_profile"
+                android:contentDescription="" />
+
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_toRightOf="@+id/person_profile"
+                android:text="peter_perez"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_alignParentTop="true"
+                android:id="@+id/person_name"
+
+                >
+
+            </TextView>
+
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/studililogosmaller"
+                android:layout_toRightOf="@+id/person_image"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="20dp"
+                android:layout_alignParentTop="true"
+                android:id="@+id/person_icon"
+                android:contentDescription="" />
+
+            <TextView
+                android:id="@+id/person_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@+id/person_icon"
+                android:alpha="0.7"
+                android:text="perezpeter32_gmail_com"
+                android:textSize="14sp"
+
+                >
+
+            </TextView>
+
+
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/studililogosmaller"
+                android:layout_below="@+id/person_email"
+                android:layout_toRightOf="@+id/person_image"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="0dp"
+                android:id="@+id/person_icon2"
+                android:contentDescription="" />
+
+            <TextView
+                android:id="@+id/person_mobile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/person_email"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="0dp"
+                android:layout_toRightOf="@+id/person_icon2"
+                android:alpha="0.7"
+                android:text="0269056851"
+                android:textSize="13sp"
+
+                >
+
+            </TextView>
+
+
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/studililogosmaller"
+                android:layout_toRightOf="@+id/person_email"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/person_forward"
+                android:contentDescription="" />
+
+
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>

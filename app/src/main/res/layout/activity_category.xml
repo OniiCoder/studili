@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.perez.studili.CategoryActivity">
+
+    <!--<include-->
+        <!--android:id="@+id/toolbar"-->
+        <!--layout="@layout/tool_bar"-->
+
+        <!--/>-->
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:padding="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="100dp">
+
+        <TextView
+            android:id="@+id/chooseCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Choose a Category"
+            android:textColor="@color/colorPrimary"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp"/>
+
+
+
+        <android.support.v7.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            android:id="@+id/studyCard"
+
+            android:layout_marginBottom="20dp"
+
+            app:cardBackgroundColor="@color/colorPrimary"
+            android:layout_below="@+id/chooseCategory"
+            android:clickable="true"
+            android:onClick="showMessage">
+
+            <ImageView
+                android:id="@+id/study"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_action_study"
+
+                />
+            <TextView
+                android:id="@+id/studyText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Study"
+                android:textColor="#fff"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:alpha="0.8"
+                />
+
+        </android.support.v7.widget.CardView>
+
+
+
+        <android.support.v7.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            android:layout_marginLeft="130dp"
+            android:id="@+id/workCard"
+
+            android:layout_marginBottom="20dp"
+
+            app:cardBackgroundColor="@color/colorPrimary"
+            android:layout_below="@+id/chooseCategory">
+
+            <ImageView
+                android:id="@+id/work"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_action_work"
+
+                />
+            <TextView
+                android:id="@+id/workText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Work"
+                android:textColor="#fff"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:alpha="0.8"
+                />
+
+        </android.support.v7.widget.CardView>
+
+
+
+        <android.support.v7.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            android:id="@+id/taskCard"
+
+            android:layout_marginBottom="20dp"
+
+            app:cardBackgroundColor="@color/colorPrimary"
+            android:layout_below="@+id/studyCard">
+
+            <ImageView
+                android:id="@+id/task"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_action_task"
+
+                />
+            <TextView
+                android:id="@+id/taskText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Task"
+                android:textColor="#fff"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:alpha="0.8"
+                />
+
+        </android.support.v7.widget.CardView>
+
+
+        <android.support.v7.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+
+            android:layout_below="@+id/workCard"
+            android:layout_marginLeft="130dp"
+
+            app:cardBackgroundColor="@color/colorPrimary">
+
+            <ImageView
+                android:id="@+id/play"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_action_play"
+                android:clickable="true"
+
+                />
+            <TextView
+                android:id="@+id/playText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Play"
+                android:textColor="#fff"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:alpha="0.8"
+                />
+
+        </android.support.v7.widget.CardView>
+
+
+
+
+
+
+
+
+
+    </RelativeLayout>
+    
+
+
+
+
+
+</RelativeLayout>

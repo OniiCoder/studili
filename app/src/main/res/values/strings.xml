@@ -1,4 +1,30 @@
 <resources>
     <string name="app_name">Studili</string>
-    <string name="action_settings">Settings</string>
+    <string name="welcome_to_studili">Welcome to Studili</string>
+    <string name="study_with_ease">...study with ease</string>
+    <string name="cover_all_in_no_time">Cover All in No Time</string>
+
+    <string-array name="person_name">
+        <item>Peter Perez</item>
+        <item>Kassim Balogun</item>
+        <item>Richard Alipui</item>
+        <item>Cole Baidoo</item>
+        <item>Hauwa Ibrahim</item>
+    </string-array>
+
+    <string-array name="person_email">
+        <item>perezpeter32@gmail.com</item>
+        <item>yetunde4life@gmail.com</item>
+        <item>aliquiyolo@gmail.com</item>
+        <item>quietdemon@hotmail.com</item>
+        <item>mattanahbabangida@yahoo.com</item>
+    </string-array>
+
+    <string-array name="person_mobile">
+        <item>0269056851</item>
+        <item>0269116802</item>
+        <item>0269058421</item>
+        <item>0269362899</item>
+        <item>0269935465</item>
+    </string-array>
 </resources>
