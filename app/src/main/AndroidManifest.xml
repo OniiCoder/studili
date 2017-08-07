@@ -23,6 +23,22 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".NewTaskActivity"
+            android:label="Create New Task"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".AllNotificationActivity"
+            android:label="My Notifications"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".TaskDetailsActivity"
+            android:label="@string/title_activity_task_details"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".GuessGameActivity"
+            android:label="Number Guess Game"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

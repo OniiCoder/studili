@@ -1,11 +1,16 @@
 package com.example.perez.studili;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.drawable.Drawable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.Menu;
@@ -14,17 +19,39 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import static com.example.perez.studili.R.layout.activity_category;
 
 public class MainActivity extends AppCompatActivity {
+
+
+
+    //Object of RecyclerView
+    private RecyclerView recyclerView;
+    private RecyclerView.Adapter adapter;
+    private RecyclerView.LayoutManager layoutManager;
+
+    String[] titles;
+    String[] texts;
+
+//    String[] task_names = {"Call bae", "Study Laravel 5.4", "Finish my webDev Course", "Write my business proposal", "Make Eba for Mum", "Remind Dad for PCash", "Study for Monday Test", "Reconsider Offers"};
+//    String[] task_texts = {"Make it ASAP. before she vex", "I must hit a milestone soon.", "So I can start developing real time projects", "my investor needs it ASAP", "Make she no vex", "Boys must survive na", "First Class is the target", "Maybe there can be a change of plan"};
+
+
+
     Toolbar toolbar;
+
+    DatabaseHelper myDb;
 
     FloatingActionButton fab_main, fab_2, fab_3;
     TextView txtNewTask, txtNewBook;
+
     Animation fabOpen, fabClose, fabRotateCW, fabRotateACW;
     boolean isOpen = false;
 
@@ -33,6 +60,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        myDb = new DatabaseHelper(this);
+
+
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -40,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
         Drawable logo = ContextCompat.getDrawable(this, R.drawable.ic_apps_white_24dp);
         getSupportActionBar().setIcon(logo);
+
         for (int i = 0; i < toolbar.getChildCount(); i++) {
             if (toolbar.getChildAt(i) instanceof ImageView) {
                 ImageView maybeLogo = ((ImageView) toolbar.getChildAt(i));
@@ -55,19 +86,49 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
 
-//        toolbar = (Toolbar)findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
-//
-//        android.support.v7.app.ActionBar ab = getSupportActionBar();
-//        ab.setLogo(R.drawable.ic_apps_white_24dp);
-//        ab.setDisplayUseLogoEnabled(true);
-//        ab.setDisplayShowHomeEnabled(true);
-
-            floatingBtnAnimations();
-
-
         }
 
+
+
+
+
+        //Getting Data from SQLite Database
+        titles = myDb.getTitles();
+        texts = myDb.getTexts();
+
+        //Initialize Recycler View
+        recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
+        adapter = new RecyclerAdapter(titles, texts);
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setAdapter(adapter);
+
+
+
+
+        //Call to Floating button animations and links
+        floatingBtnAnimations();
+
+
+        //New Intent for creating new task
+        newTask();
+
+
+
+
+
+    }
+
+    public void newTask(){
+        fab_2 = (FloatingActionButton)findViewById(R.id.fab_2);
+        fab_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, NewTaskActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     public void floatingBtnAnimations(){
@@ -113,6 +174,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
@@ -125,9 +188,22 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int res_id = item.getItemId();
         if(res_id == R.id.action_settings){
-            Toast.makeText(getApplicationContext(), "You selected settings option", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "You selected 'Settings' option", Toast.LENGTH_SHORT).show();
+        } else if(res_id == R.id.action_about){
+
+                Toast.makeText(getApplicationContext(), "You selected 'About App' option", Toast.LENGTH_SHORT).show();
+
+        } else if(res_id == R.id.action_help){
+
+            Toast.makeText(getApplicationContext(), "You selected 'Help & Feedback' option", Toast.LENGTH_SHORT).show();
+
+        } else if(res_id == R.id.action_notification){
+            startActivity(new Intent(MainActivity.this, AllNotificationActivity.class));
+            Toast.makeText(getApplicationContext(), "You selected 'Notification' option", Toast.LENGTH_SHORT).show();
         }
 
         return true;
     }
+
+
 }

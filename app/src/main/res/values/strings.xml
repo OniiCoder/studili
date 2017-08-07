@@ -27,4 +27,8 @@
         <item>0269362899</item>
         <item>0269935465</item>
     </string-array>
+    <string name="title_activity_new_task">NewTaskActivity</string>
+    <string name="title_activity_all_notification">AllNotificationActivity</string>
+    <string name="title_activity_task_details">TaskDetailsActivity</string>
+    <string name="title_activity_guess_game">GuessGameActivity</string>
 </resources>
